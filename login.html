@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login | LearnNova</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg,#4f46e5,#9333ea,#ec4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login-container {
+    background: white;
+    width: 380px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #4f46e5;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+.input-box {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-box label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-box input:focus {
+    border-color: #4f46e5;
+}
+
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: #4f46e5;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #4338ca;
+}
+
+
+.extra {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.extra a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-home {
+    margin-top: 25px;
+    display: block;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-container">
+    <h2>Welcome Back 👋</h2>
+    <p>Login to continue learning</p>
+
+    <form onsubmit="loginUser(event)">
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <button class="login-btn" type="submit">Login</button>
+    </form>
+
+    <div class="extra">
+        <p>Don’t have an account? <a href="index.html">Sign Up</a></p>
+    </div>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+</div>
+
+<script>
+function loginUser(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if(email && password) {
+        alert("✅ Login Successful! ");
+        window.location.href = "index.html";
+    } else {
+        alert("❌ Please fill all fields");
+    }
+}
+</script>
+
+</body>
+</html>
